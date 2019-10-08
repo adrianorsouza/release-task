@@ -3,7 +3,6 @@ const path = require('path');
 const chalk = require('chalk');
 const semver = require('semver');
 const inquirer = require('inquirer');
-const {version} = require('../package.json');
 const series = require('run-series');
 const bump = require('./tasks/bump');
 const tag = require('./tasks/tag');
@@ -11,6 +10,7 @@ const changelog = require('./tasks/changelog');
 const commit = require('./tasks/commit');
 const promptChoices = require('./prompt');
 const {errorLog, writeLog} = require('./helpers');
+const {name, version} = require(path.resolve('package.json'));
 
 const defaults = {
    currentVersion: version,
@@ -30,7 +30,7 @@ const defaults = {
    },
    tagFormatCmd: `git log @{push}.. --date=iso8601 --pretty=format:"- %s"`,
    tagName: 'v%VERSION%',
-   tagMessage: require(path.resolve('package.json')).name || '',
+   tagMessage: name || '',
    actions: [],
 };
 
