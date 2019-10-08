@@ -39,7 +39,7 @@ $ npm run release
 ```
 
 > To see how this package handle releasing commits, changelog and tags take a look 
-> in its own releasing [commit](https://github.com/adrianorsouza/release-task/commit/e383f9535130379b1f78d249745a565f22e4e2e9)
+> in its own releasing [commit](https://github.com/adrianorsouza/release-task/commit/1c8b3f7)
 > and [tag releases](https://github.com/adrianorsouza/release-task/releases/tag/v0.1.0)
 
 ### Adding custom tasks
