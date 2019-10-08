@@ -1,3 +1,8 @@
+.idea/
 node_modules
-test.js
-.gitignore
+*.DS_Store
+*.log
+*.tgz
+
+package-lock.json
+.editorconfig
