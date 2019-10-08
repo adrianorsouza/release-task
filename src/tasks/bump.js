@@ -29,7 +29,7 @@ module.exports = function bump(version, options) {
          }
 
          data.version = version;
-         const content = JSON.stringify(data, null, 2)+"\n";
+         const content = JSON.stringify(data, null, 4)+"\n";
          fs.writeFileSync(filePath, content, 'utf8');
          result.push(file)
 
