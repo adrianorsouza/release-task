@@ -1,5 +1,13 @@
 # Changelog
 
+Version 0.2.0 - 2019-11-12
+===========================
+
+  - 2019-11-12 - Update README.md
+  - 2019-11-12 - add option config indentSize defaults 2
+  - 2019-11-12 - improved prompt name by passing the name of the files
+
+
 Version 0.1.2 - 2019-10-08
 ===========================
 
