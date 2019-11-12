@@ -7,15 +7,15 @@ module.exports = function prompt(options) {
    const defaultActions = [{
       checked: true,
       value: 'bump',
-      name: 'Version Bump (package.json)'
+      name: `Version Bump: (${options.bumpFiles.join(`, `).toString()})`
    }, {
       checked: false,
       value: 'changelog',
-      name: 'Update Changelog'
+      name: `Update Changelog: (${options.changelog.filename})`
    }, {
       checked: false,
       value: 'commit',
-      name: 'Commit Changes'
+      name: `Commit File Changes: (${options.commitFiles.join(`, `).toString()})`
    }, {
       checked: false,
       value: 'tag',
