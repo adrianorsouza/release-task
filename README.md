@@ -1,5 +1,5 @@
 release-task
-===================
+============
 
 A package to automate releasing for git projects. Out of the box this package does the following:
 
@@ -20,7 +20,7 @@ $ npm i release-task --save-dev
 Create a script file that could be run via npm scripts like: 
 `./scripts/release.js`
 ```js
-const releaseTask = require(release-task);
+const releaseTask = require('release-task');
 tasks.init();
 ```
 
@@ -60,14 +60,15 @@ option            | type     | description
 `commitFiles`     |`array`   | files that should be commit after changes.
 `commitMessage`   |`string`  | the format of the commit message for the release.
 `changelog`       |`object`  | default options for the changelog.
--`gitChangeLog`  |`string`  | the git command used to list and format the changelog.
--`gitChangeLogArguments`| `array` | list of arguments that git should run to generate the changelog.
--`filename`      |`string` | the change log file name.
--`header`        |`string` | the default header for changelog.
--`template`      |`string` | the default format for the list of the latest commit.
+`changelog.gitChangeLog`|`string`  | the git command used to list and format the changelog.
+`changelog.gitChangeLogArguments`| `array` | list of arguments that git should run to generate the changelog.
+`changelog.filename`|`string` | the change log file name.
+`changelog.header`|`string` | the default header for changelog.
+`changelog.template`|`string` | the default format for the list of the latest commit.
 `tagFormatCmd`    |`string` | the git command to format the tag message commit.
 `tagName`         |`string` | the default tag format i.e: `v1.2.3`.
 `tagMessage`      |`string` | the default title for the annotated tag message.
+`config.indentSize`|`number` | the default indent size for JSON files changes.
 
 
 ### Function Tasks
