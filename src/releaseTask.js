@@ -32,6 +32,9 @@ const defaults = {
    tagName: 'v%VERSION%',
    tagMessage: name || '',
    actions: [],
+   config: {
+      indentSize: 2,
+   }
 };
 
 const prompt = inquirer.createPromptModule();
