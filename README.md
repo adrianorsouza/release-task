@@ -98,3 +98,5 @@ All rights reserved.
 For the full copyright and license information, please view the LICENSE 
 file that was distributed within the source root of this project.
 
+This project was proudly develop using [PHP Storm](https://www.jetbrains.com/phpstorm/) by [JetBrains](https://www.jetbrains.com/)
+
