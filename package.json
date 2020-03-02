@@ -25,8 +25,8 @@
   "homepage": "https://github.com/adrianorsouza/release-task#readme",
   "dependencies": {
     "chalk": "^2.4.2",
-    "dayjs": "^1.8.16",
-    "inquirer": "^7.0.0",
+    "dayjs": "^1.8.25",
+    "inquirer": "^7.1.0",
     "run-series": "^1.1.8",
     "semver": "^6.3.0"
   }
