@@ -1,36 +1,35 @@
-
 const semver = require('semver');
-const {exec} = require('child_process');
-const {writeLog} = require('../helpers');
+const { exec } = require('child_process');
+const { writeLog } = require('../helpers');
 
 module.exports = function tag(version, options) {
+  writeLog('TASK tag');
 
-   writeLog('TASK tag');
+  return new Promise((resolve, reject) => {
+    if (!semver.valid(version)) {
+      return reject(`CreateTag failed due invalid tag: "${version}"`);
+    }
 
-   return new Promise((resolve, reject) => {
+    let tagName = options.tagName.replace('%VERSION%', version);
+    let tagMessage = options.tagMessage.replace('%VERSION%', version);
 
-      if (! semver.valid(version)) {
-         return reject(`CreateTag failed due invalid tag: "${version}"`);
+    exec(options.tagFormatCmd, (error, stdout, stderr) => {
+      if (error) {
+        return reject('Can not list the latest commits:\n  ' + stderr);
       }
 
-      let tagName = options.tagName.replace('%VERSION%', version);
-      let tagMessage = options.tagMessage.replace('%VERSION%', version);
+      tagMessage = tagMessage + '\n' + stdout.split('\n').join(' \n');
 
-      exec(options.tagFormatCmd, (error, stdout, stderr) => {
-         if (error) {
-            return reject('Can not list the latest commits:\n  ' + stderr);
-         }
+      exec(
+        `git tag -a ${tagName} -m "${tagMessage}"`,
+        (error, stdout, stderr) => {
+          if (error) {
+            return reject(`Can't create the tag ${tagName}:\n\n${stderr}`);
+          }
 
-         tagMessage = tagMessage+"\n"+stdout.split("\n").join(" \n");
-
-         exec(`git tag -a ${tagName} -m "${tagMessage}"`, (error, stdout, stderr) => {
-
-            if (error) {
-               return reject(`Can't create the tag ${tagName}:\n\n${stderr}`);
-            }
-
-            resolve(`TASK tag done!\n\n${tagName}`);
-         })
-      })
-   })
+          resolve(`TASK tag done!\n\n${tagName}`);
+        }
+      );
+    });
+  });
 };
