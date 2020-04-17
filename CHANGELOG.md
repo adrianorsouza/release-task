@@ -1,5 +1,16 @@
 # Changelog
 
+Version 1.0.0 - 2020-04-17
+===========================
+
+  - 2020-04-16 - Update LICENSE
+  - 2020-04-15 - bump.js now uses async Function instead return new Promise
+  - 2020-03-10 - fix style formatting
+  - 2020-03-10 - add prettier package
+  - 2020-03-02 - update packages
+  - 2020-02-27 - Update README.md
+
+
 # Version 0.2.0 - 2019-11-12
 
 - 2019-11-12 - Update README.md
