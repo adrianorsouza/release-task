@@ -98,7 +98,7 @@ https://adrianorosa.com
 
 ## Licence
 
-Copyright © 2019, Adriano Rosa <info@adrianorosa.com>
+Copyright © 2019, Adriano Rosa <https://adrianorosa.com>
 All rights reserved.
 
 For the full copyright and license information, please view the LICENSE
