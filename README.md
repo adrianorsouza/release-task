@@ -38,8 +38,8 @@ $ npm run release
 ```
 
 > To see how this package handle releasing commits, changelog and tags take a look
-> in its own releasing [commit](https://github.com/adrianorsouza/release-task/commit/1c8b3f7)
-> and [tag releases](https://github.com/adrianorsouza/release-task/releases/tag/v0.1.0)
+> in its own releasing [commit](https://github.com/adrianorsouza/release-task/commit/bdc0f4ae)
+> and [tag releases](https://github.com/adrianorsouza/release-task/releases/tag/v1.0.0)
 
 ### Adding custom tasks
 
@@ -71,13 +71,21 @@ tasks as an array of functions in series using [run-series](https://github.com/f
 
 ### Function Tasks
 
-Every task receives two params, the incremented version string and the options
+Every task receives two params, the incremented version string, and the configuration options:
 
 ```js
-function task(version, options) {
-  return new Promise((resolve, reject) => {
-    //
-  });
+async function task(version, options) {
+  // Task body is basically:
+  // do something with the already incremented version
+  // access to the config options
+  // onError throw any message string
+  // onSuccess return a message string
+  const someAsyncMethod = () => {};
+  const result = await someAsyncMethod();
+  if (result) {
+    throw new Error('Error Message!');
+  }
+  return 'Success Message!';
 }
 ```
 
