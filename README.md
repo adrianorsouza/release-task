@@ -43,10 +43,11 @@ $ npm run release
 
 ### Adding custom tasks
 
-Tasks are function that do something and return a Promise, by default there are 4 tasks setup, but it's
-possible to create your own task to run after the default tasks are completed.
+Tasks are functions that do something and return a Promise, by default there are four 
+defined tasks already defined, but it's possible to create your own custom task to run 
+after the default tasks gets completed.
 
-Tasks are queued, in order to executed each step without missing something on the way,
+Task queued, in order to get executed each step without missing something on the way,
 i.e commit a file without changelog content being updated. So because of this we run
 tasks as an array of functions in series using [run-series](https://github.com/feross/run-series).
 
@@ -74,18 +75,20 @@ tasks as an array of functions in series using [run-series](https://github.com/f
 Every task receives two params, the incremented version string, and the configuration options:
 
 ```js
-async function task(version, options) {
+const util = require('util');
+const exec = util.promisify(require('child_process').exec);
+
+const customTask = async (version, options) => {
   // Task body is basically:
   // do something with the already incremented version
   // access to the config options
   // onError throw any message string
   // onSuccess return a message string
-  const someAsyncMethod = () => {};
-  const result = await someAsyncMethod();
-  if (result) {
+  const { stdout, stderr } = await exec('ls -lah');
+  if (stderr) {
     throw new Error('Error Message!');
   }
-  return 'Success Message!';
+  return stdout;
 }
 ```
 
@@ -103,5 +106,3 @@ All rights reserved.
 
 For the full copyright and license information, please view the LICENSE
 file that was distributed within the source root of this project.
-
-**Release-Task** was proudly developed using [PHP Storm](https://www.jetbrains.com/phpstorm/) by [JetBrains](https://www.jetbrains.com/).
