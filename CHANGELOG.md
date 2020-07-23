@@ -1,5 +1,15 @@
 # Changelog
 
+Version 1.1.0 - 2020-07-23
+===========================
+
+  - 2020-07-23 - update README
+  - 2020-04-27 - typofix
+  - 2020-04-27 - don't expose an email address
+  - 2020-04-27 - ignored npm files
+  - 2020-04-27 - update README.md
+
+
 Version 1.0.0 - 2020-04-17
 ===========================
 
