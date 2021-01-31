@@ -1,6 +1,6 @@
 {
   "name": "release-task",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Version bump, update changelog, commit changes, push and deploy GIT projects by running single task script",
   "main": "index.js",
   "scripts": {
