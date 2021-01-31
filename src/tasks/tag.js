@@ -21,7 +21,7 @@ module.exports = function tag(version, options) {
       tagMessage = tagMessage + '\n' + stdout.split('\n').join(' \n');
 
       exec(
-        `git tag -a ${tagName} -m "${tagMessage}"`,
+        `git tag -a ${tagName} -m "${tagMessage.replace(/\"/g, '\'')}"`,
         (error, stdout, stderr) => {
           if (error) {
             return reject(`Can't create the tag ${tagName}:\n\n${stderr}`);
